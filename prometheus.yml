@@ -11,14 +11,14 @@ scrape_configs:
       - port: 9100 # referred to nodeExporter exposed port
         role_arn: arn:aws:iam::548680023758:role/Ec2-Instance-Role
         filters:
-        - name: tag:aws:autoscaling:groupName
+        - name: aws:ecs:clusterName
           values:
-          - fx-devbhyang10-xo-ecs-asg
+          - FX-DEVBHYANG10-XO-CLUSTER
   - job_name: ecs_CAdvisor
     ec2_sd_configs:
       - port: 9200 # referred to cAdvisor exposed port
         role_arn: arn:aws:iam::548680023758:role/Ec2-Instance-Role
         filters:
-        - name: tag:aws:autoscaling:groupName
+        - name: aws:ecs:clusterName
           values:
-          - fx-devbhyang10-xo-ecs-asg
+          - FX-DEVBHYANG10-XO-CLUSTER
