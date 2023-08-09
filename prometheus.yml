@@ -11,14 +11,14 @@ scrape_configs:
       - port: 9100 # referred to nodeExporter exposed port
         role_arn: arn:aws:iam::548680023758:role/Ec2-Instance-Role
         filters:
-        - name: tag:aws:autoscaling:groupName
+        - name: tag:SERVICE_NAME
           values:
-          - fx-function-Cluster-ECSAutoScalingGroup-1LHN6AR5XRPI6
+          - FXSKR
   - job_name: 'CAdvisor'
     ec2_sd_configs:
       - port: 9200 # referred to cAdvisor exposed port
         role_arn: arn:aws:iam::548680023758:role/Ec2-Instance-Role
         filters:
-        - name: tag:aws:autoscaling:groupName
+        - name: tag:SERVICE_NAME
           values:
-          - fx-function-Cluster-ECSAutoScalingGroup-1LHN6AR5XRPI6
+          - FXSKR
