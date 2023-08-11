@@ -6,7 +6,7 @@ scrape_configs:
   - job_name: 'prometheus'
     static_configs:
     - targets: ['localhost:9090'] ## IP Address of the localhost
-  - job_name: 'exporter'
+  - job_name: 'ecs-node-exporter'
     ec2_sd_configs:
       - port: 9100 # referred to nodeExporter exposed port
         role_arn: arn:aws:iam::548680023758:role/Ec2-Instance-Role
@@ -14,7 +14,7 @@ scrape_configs:
         - name: tag:SERVICE_NAME
           values:
           - FXSKR
-  - job_name: 'CAdvisor'
+  - job_name: 'ecs-CAdvisor'
     ec2_sd_configs:
       - port: 9200 # referred to cAdvisor exposed port
         role_arn: arn:aws:iam::548680023758:role/Ec2-Instance-Role
