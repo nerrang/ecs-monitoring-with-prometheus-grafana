@@ -13,7 +13,7 @@ scrape_configs:
         filters:
         - name: tag:aws:autoscaling:groupName
           values:
-          - fx-devbhyang10-xo-ecs-asg
+          - fx-devjyshin-xo-ecs-asg
   - job_name: 'ecs-CAdvisor'
     ec2_sd_configs:
       - port: 9200 # referred to cAdvisor exposed port
@@ -21,4 +21,4 @@ scrape_configs:
         filters:
         - name: tag:aws:autoscaling:groupName
           values:
-          - fx-devbhyang10-xo-ecs-asg
+          - fx-devjyshin-xo-ecs-asg
